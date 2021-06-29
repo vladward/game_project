@@ -1,13 +1,33 @@
-.nav {
-    background-color: rosybrown;
-    padding: 20px;
+.main {
+    grid-area: n;
 }
 
+.nav {
+    height: 821px;
+    background-color: rgba(25, 25, 25);
+    padding: 0;
+}
+
+.item {
+    border-bottom: 2px solid #333;
+    padding: 15px 15px 15px 15px;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+
 .item a{
-    color:#333;
+    color:#fff;
     text-decoration: none;
 }
 
+
 .item a.active {
     color: gold;
+}
+
+.item:hover{
+    color: gold;
+    background: cadetblue;
 }

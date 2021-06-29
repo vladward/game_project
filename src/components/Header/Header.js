@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header className={styles.Header}>
             <div className={styles.Logo}>
-                <a href={"#"}>
+                <a href={"/"}>
                     Logotype
                 </a>
             </div>
