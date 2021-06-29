@@ -1,12 +1,13 @@
 import React from "react";
 import './App.css';
+import Header from "./components/Header/Header";
 
 const App = () => {
-  return (
-      <div>
-        Hello Game, it's my firs project!
-      </div>
-  );
+    return (
+        <div>
+            <Header/>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+.Header {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: darkgray;
+}
+
+.Logo {
+    position: absolute;
+    padding: 25px;
+    font-size: 30px;
+    font-weight: 700;
+    width: 200px;
+    color: #333;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.Logo a {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+.Logo a:hover {
+    color: #333;
+}
+
+.headerCheckBox {
+    width: 200px;
+    display: flex;
+    position: inherit;
+    float: right;
+    padding: 15px 25px 10px 25px;
+    font-size: 30px;
+    font-weight: 700;
+    width: 220px;
+    color:#333;
+    font-family: 'Architects Daughter', cursive;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.headerLogin {
+    position: relative;
+    padding-top: 10px;
+}
+
+.headerCheckBox img {
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 50rem;
+}
+
+.list {
+    transform: rotate(90deg);
+}
