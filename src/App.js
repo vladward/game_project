@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
 
-function App() {
+const App = () => {
   return (
       <div>
         Hello Game, it's my firs project!
