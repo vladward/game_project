@@ -1,7 +1,6 @@
 import React from "react"
 import styles from "./Header.module.css"
 import userPhoto from "./../../images/user_profile.png"
-import s from "../UserList/UserList.module.css";
 
 const Header = () => {
     return (
@@ -23,12 +22,6 @@ const Header = () => {
                         <a href="#">Logout</a>
                     </div>
                 </div>
-                {/*<div className={styles.headerCheckBox}>*/}
-                {/*    */}
-                {/*    <div className={styles.headerLogin}>login</div>*/}
-                {/*    */}
-                {/*    <div className={styles.list}> > </div>*/}
-                {/*</div>*/}
             </div>
 
         </header>
