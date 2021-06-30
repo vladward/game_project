@@ -7,6 +7,8 @@ import Profile from "./containers/Profile/Profile";
 import MyGames from "./containers/MyGames/MyGames";
 import Statistics from "./containers/Statistics/Statistics";
 import Friends from "./containers/Friends/Friends";
+import UserList from "./components/UserList/UserList";
+import Settings from "./components/Settings/Settings";
 
 const App = () => {
     return (
@@ -19,6 +21,7 @@ const App = () => {
                     <Route path="/MyGames" component={MyGames}/>
                     <Route path="/Statistics" component={Statistics}/>
                     <Route path="/Friends" component={Friends}/>
+                    <Route path="/settings" component={Settings}/>
                     <Route exact path='/' render={() => <Redirect to={"/profile"}/>}/>
                     <Route path='/*' render={() => <div>404 not found</div>}/>
                 </Switch>

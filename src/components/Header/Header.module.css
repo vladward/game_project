@@ -2,6 +2,25 @@
     box-sizing: border-box;
 }
 
+.Logo {
+    padding: 25px;
+    font-size: 30px;
+    font-weight: 700;
+    width: 200px;
+    color: #333;
+    font-family: 'Architects Daughter', cursive;
+
+}
+
+.Logo a {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+.Logo a:hover {
+    color: #333;
+}
+
 .Header {
     grid-area: h;
     width: 100%;
@@ -14,51 +33,85 @@
     background-color: darkgray;
 }
 
-.Logo {
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.dropbtn {
+    background-color: darkgray;
+    color: white;
+    padding: 20.5px;
+    border: none;
+    font-family: "Candara Light";
+    font-size: 32px;
+}
+
+.dropbtn img {
+    width: 50px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_content {
+    display: none;
     position: absolute;
-    padding: 25px;
-    font-size: 30px;
-    font-weight: 700;
-    width: 200px;
-    color: #333;
-    font-family: 'Architects Daughter', cursive;
+    background-color: rgba(25, 25, 25);
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-.Logo a {
-    color: #333;
+.dropdown_content a {
+    color: #fff;
+    padding: 12px 16px;
     text-decoration: none;
-    cursor: pointer;
-}
-.Logo a:hover {
-    color: #333;
+    display: block;
+    text-align: center;
 }
 
-.headerCheckBox {
-    width: 200px;
+.dropdown_content a:hover {background-color: cadetblue;}
+
+.dropdown:hover .dropdown_content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: cadetblue;}
+
+
+
+
+
+
+headerCheckBox {
+    width: 350px;
     display: flex;
     position: inherit;
     float: right;
     padding: 15px 25px 10px 25px;
     font-size: 30px;
     font-weight: 700;
-    width: 220px;
     color:#333;
     font-family: 'Architects Daughter', cursive;
     justify-content: space-between;
     cursor: pointer;
 }
 
-.headerLogin {
+headerLogin {
     position: relative;
     padding-top: 10px;
 }
 
-.headerCheckBox img {
+headerCheckBox img {
     width: 70px;
     border: 1px solid black;
     border-radius: 50rem;
 }
 
-.list {
+list {
     transform: rotate(90deg);
 }

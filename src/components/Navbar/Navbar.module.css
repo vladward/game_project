@@ -1,9 +1,10 @@
 .main {
     grid-area: n;
+    height: 100%;
 }
 
 .nav {
-    height: 821px;
+    height: auto;
     background-color: rgba(25, 25, 25);
     padding: 0;
 }
