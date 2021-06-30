@@ -83,9 +83,13 @@
 
 .dropdown_content a:hover {background-color: cadetblue;}
 
+.dropbtn:hover {
+    background-color: lightgrey;
+}
+
 .dropdown:hover .dropdown_content {display: block; }
 
-.dropdown:hover .dropbtn {background-color: cadetblue; }
+.dropdown:hover .dropbtn {background-color: darkgray; }
 
 
 

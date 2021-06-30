@@ -15,6 +15,16 @@
     height: 82px;
     padding: 25px 50px;
     margin-left: 50px;
+    color: #fff;
+    background-color: darkgray;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+.ava button:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+    border: none;
 }
 
 .container {
@@ -46,5 +56,5 @@
 }
 
 .name a {
-    font-size: 45px;
+    font-size: 35px;
 }
