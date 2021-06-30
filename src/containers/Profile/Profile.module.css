@@ -2,3 +2,49 @@
     max-width: 1600px;
     width: 100%;
 }
+
+.ava img {
+    max-width: 300px;
+    height: auto;
+    padding: 25px 50px;
+}
+
+.ava button {
+    max-width: 300px;
+    width: 200px;
+    height: 82px;
+    padding: 25px 50px;
+    margin-left: 50px;
+}
+
+.container {
+    display: grid;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    grid-template-areas:
+
+        "a n";
+    grid-template-rows: 300px 1fr;
+    grid-template-columns: 2fr 8fr;
+
+
+}
+
+.name {
+    padding-top: 35px;
+    font-size: 22px;
+    font-family: auto;
+}
+
+.name strong {
+    font-size: 35px;
+}
+
+.name i {
+    font-size: 40px;
+}
+
+.name a {
+    font-size: 45px;
+}

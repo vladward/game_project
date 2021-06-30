@@ -57,6 +57,11 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    cursor: pointer
+}
+
+.dropdown label {
+    cursor: pointer
 }
 
 .dropdown_content {
@@ -78,9 +83,9 @@
 
 .dropdown_content a:hover {background-color: cadetblue;}
 
-.dropdown:hover .dropdown_content {display: block;}
+.dropdown:hover .dropdown_content {display: block; }
 
-.dropdown:hover .dropbtn {background-color: cadetblue;}
+.dropdown:hover .dropbtn {background-color: cadetblue; }
 
 
 
