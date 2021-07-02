@@ -29,10 +29,9 @@
 }
 
 .success {
-    background: rgba(161, 240, 69, 1);
+    background: cadetblue;
 }
 
 .primary {
-    background: #2884f6;
-    color: #fff;
+    background: cadetblue;
 }
