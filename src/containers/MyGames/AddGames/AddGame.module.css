@@ -1,0 +1,24 @@
+.AddGames {
+
+}
+
+.AddGames_form Button {
+    width: 200px;
+    height: 50px;
+    margin: 23px 20px 23px 20px;
+}
+
+.AddGames_form {
+    background: #eee;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.AddGames > div {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+    margin: 50px 340px;
+    text-align: center;
+}

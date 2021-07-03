@@ -9,6 +9,7 @@ import Statistics from "./containers/Statistics/Statistics";
 import Friends from "./containers/Friends/Friends";
 import Settings from "./components/Settings/Settings";
 import Auth from "./containers/Auth/Auth";
+import AddGame from "./containers/MyGames/AddGames/AddGame";
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                 <Switch>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/MyGames" component={MyGames}/>
+                    <Route path="/AddGame" component={AddGame}/>
                     <Route path="/Statistics" component={Statistics}/>
                     <Route path="/Friends" component={Friends}/>
                     <Route path="/settings" component={Settings}/>
