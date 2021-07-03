@@ -1,5 +1,5 @@
 import React from "react"
-import styles from './Profile.module.css'
+import s from './Profile.module.css'
 import userPhoto from "./../../images/user_profile.png"
 import cod from "./../../images/gameIcons/cod.png"
 import csgo from "./../../images/gameIcons/csgo.png"
@@ -9,13 +9,17 @@ import minecraft from "./../../images/gameIcons/minecraft.png"
 
 const Profile = () => {
     return (
-        <div className={styles.item}>
-            <div className={styles.container}>
-                <div className={styles.ava}>
-                    <img src={userPhoto} alt=""/><br/>
-                    <button>Subscribe</button>
+        <div className={s.item}>
+            <div className={s.container}>
+                <div className={s.ava_item}>
+                    <div className={s.img_container}>
+                        <img src={userPhoto}/>
+                    </div>
+                    <div className={s.subscribe_container}>
+                        <button>Subscribe</button>
+                    </div>
                 </div>
-                <div className={styles.name}>
+                <div className={s.name}>
                     <label><i className="fas fa-user-alt"></i>&nbsp;
                         <em>name:</em> <a>Vladislav Malohvey</a></label>--user.name<br/>
                     <label><i className="fas fa-headset"></i>&nbsp;
@@ -29,28 +33,28 @@ const Profile = () => {
                     <label><i className="fas fa-gamepad"></i>&nbsp;
                         <em>like a:</em> <a>Adventure, Action, Party, Survival</a></label>--user.likes<br/>
                 </div>
-                <div className={styles.games}>
-                    <div className={styles.games_Container}>
-                        <div className={styles.game_item}>
-                            <img src={cod}/><br/>
-                            <i>Call of Duty</i>
+
+                <div className={s.games}>
+                    <div className={s.header}>
+                        Любимые игры
+                    </div>
+                    <div className={s.games_Container}>
+                        <div className={s.game_item}>
+                            <img src={cod}/>
+                            <div className={s.game_name}>Call of Duty</div>
                         </div>
-                        <div className={styles.game_item}>
-                            <img src={csgo}/><br/>
-                            <i>CS:GO</i>
+                        <div className={s.game_item}>
+                            <img src={csgo}/>
+                            <div className={s.game_name}>CS:GO</div>
                         </div>
-                        <div className={styles.game_item}>
-                            <img src={dota}/><br/>
-                            <i>Dota 2</i>
+                        <div className={s.game_item}>
+                            <img src={dota}/>
+                            <div className={s.game_name}>DOTA2</div>
                         </div>
-                        <div className={styles.game_item}>
-                            <img src={fortnite}/><br/>
-                            <i>Fortnite</i>
+                        <div className={s.game_item}>
+                            <img src={fortnite}/>
+                            <div className={s.game_name}>Fortnite</div>
                         </div>
-                        {/*<div className={styles.game_item}>*/}
-                        {/*    <img src={minecraft}/>*/}
-                        {/*    <i>Minecraft</i>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
             </div>
