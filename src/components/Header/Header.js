@@ -8,8 +8,8 @@ const Header = () => {
         <header className={styles.Header}>
             <div className={styles.container}>
                 <div className={styles.Logo}>
-                    <a href={"/"}>
-                        Logotype
+                    <a href={"/"} className={styles.rainbow_text}>
+                        Gamer arena
                     </a>
                 </div>
                 <div className={styles.dropdown}>
