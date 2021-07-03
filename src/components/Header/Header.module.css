@@ -13,12 +13,48 @@
 }
 
 .Logo a {
-    color: #333;
-    text-decoration: none;
+    font-family: 'Tourney', cursive;
+    font-weight: 800;
+    font-size: 30px;
+    width: 5em;
+    line-height: 0.9em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    margin-top: calc(50vh - 1em);
+}
+
+
+
+.rainbow_text {
+
+    background: #CA4246;
+    background-color: #CA4246;
+    background: conic-gradient(
+            #CA4246 16.666%,
+            #E16541 16.666%,
+            #E16541 33.333%,
+            #F18F43 33.333%,
+            #F18F43 50%,
+            #8B9862 50%,
+            #8B9862 66.666%,
+            #476098 66.666%,
+            #476098 83.333%,
+            #A7489B 83.333%);
+
+    background-size: 57%;
+    background-repeat: repeat;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: rainbow_text-animation-rev 0.5s ease forwards;
+
     cursor: pointer;
 }
-.Logo a:hover {
-    color: #333;
+
+.rainbow_text:hover {
+    animation: rainbow_text-animation 0.5s ease forwards;
 }
 
 .Header {
@@ -95,82 +131,6 @@
 
 
 
-
-headerCheckBox {
-    width: 350px;
-    display: flex;
-    position: inherit;
-    float: right;
-    padding: 15px 25px 10px 25px;
-    font-size: 30px;
-    font-weight: 700;
-    color:#333;
-    font-family: 'Architects Daughter', cursive;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-headerLogin {
-    position: relative;
-    padding-top: 10px;
-}
-
-headerCheckBox img {
-    width: 70px;
-    border: 1px solid black;
-    border-radius: 50rem;
-}
-
-list {
-    transform: rotate(90deg);
-}
-
-
-
-.Logo a {
-    font-family: 'Tourney', cursive;
-    font-weight: 800;
-    font-size: 30px;
-    width: 5em;
-    line-height: 0.9em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1.5em;
-    margin-top: calc(50vh - 1em);
-}
-
-
-
-.rainbow_text {
-
-    background: #CA4246;
-    background-color: #CA4246;
-    background: conic-gradient(
-            #CA4246 16.666%,
-            #E16541 16.666%,
-            #E16541 33.333%,
-            #F18F43 33.333%,
-            #F18F43 50%,
-            #8B9862 50%,
-            #8B9862 66.666%,
-            #476098 66.666%,
-            #476098 83.333%,
-            #A7489B 83.333%);
-
-    background-size: 57%;
-    background-repeat: repeat;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: rainbow_text-animation-rev 0.5s ease forwards;
-
-    cursor: pointer;
-}
-
-.rainbow_text:hover {
-    animation: rainbow_text-animation 0.5s ease forwards;
-}
 
 @keyframes rainbow_text-animation {
     0% {
