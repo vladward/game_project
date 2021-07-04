@@ -9,8 +9,7 @@ import assasins from "./../../images/gameIcons/assasins.png"
 import skyrim from "./../../images/gameIcons/skyrim.png"
 import horizon from "./../../images/gameIcons/horizen.png"
 import Button from "../../components/UI/Button/Button";
-import AddGames from "./AddGames/AddGame";
-import {Link, Route, Switch} from "react-router-dom";
+import axios from "axios"
 
 
 class MyGames extends React.Component {

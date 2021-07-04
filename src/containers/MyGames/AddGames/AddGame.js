@@ -4,6 +4,7 @@ import Button from "../../../components/UI/Button/Button";
 import {createControl, validate, validateForm} from "../../../form/formFramework";
 import Input from "../../../components/UI/Input/Input";
 import emptyTag from "../../../hoc/emptyTag/emptyTag";
+import axios from "axios";
 
 function createOptionControl(number, text) {
     return createControl({
@@ -15,18 +16,19 @@ function createOptionControl(number, text) {
 
 function createFormControls() {
     return {
-        question: createControl({
+        newGame: createControl({
             label: 'Введите название игры',
             errorMessage: 'Это поле не может быть пустым'
         }, {required: true}),
-        option2: createOptionControl(1, 'Оценка'),
-        option3: createOptionControl(2, 'Жанр'),
-        option4: createOptionControl(3, 'Платформа'),
-        option5: createOptionControl(4, 'Издатель'),
-        option6: createOptionControl(5, 'Разработчик'),
-        option7: createOptionControl(6, 'Дата создания')
+        game1: createOptionControl(1, 'Оценка'),
+        game2: createOptionControl(2, 'Жанр'),
+        game3: createOptionControl(3, 'Платформа'),
+        game4: createOptionControl(4, 'Издатель'),
+        game5: createOptionControl(5, 'Разработчик'),
+        game6: createOptionControl(6, 'Дата создания')
     }
 }
+
 
 class AddGame extends React.Component {
 
@@ -36,12 +38,56 @@ class AddGame extends React.Component {
         formControls: createFormControls()
     }
 
-    addGameHandler = (e) => {
+    submitHandler = (e) => {
         e.preventDefault()
     }
 
-    clearGameHandler = () => {
+    addGameHandler = (e) => {
+        e.preventDefault()
 
+        const games = this.state.games.concat()
+        const index = games.length + 1
+
+        const newGameItem = {
+            newGame: this.state.formControls.newGame.value,
+            id: index,
+            newGames: [
+                {text: this.state.formControls.game1.value, id: this.state.formControls.game1.id},
+                {text: this.state.formControls.game2.value, id: this.state.formControls.game2.id},
+                {text: this.state.formControls.game3.value, id: this.state.formControls.game3.id},
+                {text: this.state.formControls.game4.value, id: this.state.formControls.game4.id},
+                {text: this.state.formControls.game5.value, id: this.state.formControls.game5.id},
+                {text: this.state.formControls.game6.value, id: this.state.formControls.game6.id},
+            ]
+        }
+
+        games.push(newGameItem)
+
+        this.setState({
+            games,
+            isFormValid: false,
+            formControls: createFormControls()
+        })
+    }
+
+    createGameHandler = async (e) => {
+        e.preventDefault()
+
+        try{
+            await axios.post('https://gamer-arena-a2edb-default-rtdb.europe-west1.firebasedatabase.app/Games.json', this.state.games)
+
+            this.setState({
+                games: [],
+                isFormValid: false,
+                formControls: createFormControls()
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    cancelGameHandler = (e) => {
+        this.props.history.push("/MyGames")
     }
 
     changeHandler = (value, controlName) => {
@@ -83,22 +129,28 @@ class AddGame extends React.Component {
     }
 
     render() {
+
         return (
             <div className={s.AddGames}>
                 <div>
                     <h1>Добавить игру</h1>
-                    <form className={s.AddGames_form}>
+                    <form onSubmit={this.submitHandler} className={s.AddGames_form}>
 
                         {this.renderControls()}
 
                         <Button
                             type="success"
                             onClick={this.addGameHandler}
-                            disabled={!this.state.isFormValid}>Добавить
+                            disabled={!this.state.isFormValid}>1) Сохранить значения
+                        </Button>
+                        <Button
+                            type="success"
+                            onClick={this.createGameHandler}
+                            disabled={this.state.games.length === 0}>2) Добавить игру
                         </Button>
                         <Button
                             type="primary"
-                            onClick={this.clearGameHandler}>Отмена
+                            onClick={this.cancelGameHandler}>Отмена
                         </Button>
                     </form>
                 </div>
