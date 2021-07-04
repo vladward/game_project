@@ -5,6 +5,10 @@
     grid-area: c;
 }
 
+.Container h1 {
+    text-align: center;
+}
+
 .Header {
     display: flex;
     justify-content: space-between;

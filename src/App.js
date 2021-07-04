@@ -20,6 +20,7 @@ const App = () => {
                 <Switch>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/MyGames" component={MyGames}/>
+                    <Route path="/MyGames/:id" component={MyGames} />
                     <Route path="/AddGame" component={AddGame}/>
                     <Route path="/Statistics" component={Statistics}/>
                     <Route path="/Friends" component={Friends}/>

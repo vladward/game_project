@@ -6,17 +6,17 @@ import Input from "../../../components/UI/Input/Input";
 import emptyTag from "../../../hoc/emptyTag/emptyTag";
 import axios from "axios";
 
-function createOptionControl(number, text) {
+function createOptionControl(item, text) {
     return createControl({
         label: `${text}`,
         errorMessage: 'Это поле не может быть пустым',
-        id: number
+        id: item
     }, {required: true})
 }
 
 function createFormControls() {
     return {
-        newGame: createControl({
+        Game: createControl({
             label: 'Введите название игры',
             errorMessage: 'Это поле не может быть пустым'
         }, {required: true}),
@@ -34,6 +34,7 @@ class AddGame extends React.Component {
 
     state = {
         games: [],
+        newGameItem: {},
         isFormValid: false,
         formControls: createFormControls()
     }
@@ -42,39 +43,52 @@ class AddGame extends React.Component {
         e.preventDefault()
     }
 
-    addGameHandler = (e) => {
-        e.preventDefault()
-
-        const games = this.state.games.concat()
-        const index = games.length + 1
-
-        const newGameItem = {
-            newGame: this.state.formControls.newGame.value,
-            id: index,
-            newGames: [
-                {text: this.state.formControls.game1.value, id: this.state.formControls.game1.id},
-                {text: this.state.formControls.game2.value, id: this.state.formControls.game2.id},
-                {text: this.state.formControls.game3.value, id: this.state.formControls.game3.id},
-                {text: this.state.formControls.game4.value, id: this.state.formControls.game4.id},
-                {text: this.state.formControls.game5.value, id: this.state.formControls.game5.id},
-                {text: this.state.formControls.game6.value, id: this.state.formControls.game6.id},
-            ]
-        }
-
-        games.push(newGameItem)
-
-        this.setState({
-            games,
-            isFormValid: false,
-            formControls: createFormControls()
-        })
-    }
+    // addGameHandler = (e) => {
+    //     e.preventDefault()
+    //
+    //     const games = this.state.games.concat()
+    //     const index = games.length + 1
+    //
+    //     const newGameItem = {
+    //         nameGame: this.state.formControls.Game.value,
+    //         id: index,
+    //         description: [
+    //             {gStar: this.state.formControls.game1.value, id: this.state.formControls.game1.id},
+    //             {gGenre: this.state.formControls.game2.value, id: this.state.formControls.game2.id},
+    //             {gPlatform: this.state.formControls.game3.value, id: this.state.formControls.game3.id},
+    //             {gPublisher: this.state.formControls.game4.value, id: this.state.formControls.game4.id},
+    //             {gDeveloper: this.state.formControls.game5.value, id: this.state.formControls.game5.id},
+    //             {gDate: this.state.formControls.game6.value, id: this.state.formControls.game6.id},
+    //         ]
+    //     }
+    //
+    //     games.push(newGameItem)
+    //
+    //     this.setState({
+    //         games,
+    //         newGameItem,
+    //         isFormValid: false,
+    //         formControls: createFormControls()
+    //     })
+    // }
 
     createGameHandler = async (e) => {
         e.preventDefault()
 
+        const newGameItem = {
+            nameGame: this.state.formControls.Game.value,
+            description: {
+                gStar: this.state.formControls.game1.value,
+                gGenre: this.state.formControls.game2.value,
+                gPlatform: this.state.formControls.game3.value,
+                gPublisher: this.state.formControls.game4.value,
+                gDeveloper: this.state.formControls.game5.value,
+                gDate: this.state.formControls.game6.value
+            }
+        }
+
         try{
-            await axios.post('https://gamer-arena-a2edb-default-rtdb.europe-west1.firebasedatabase.app/Games.json', this.state.games)
+            await axios.post('https://gamer-arena-a2edb-default-rtdb.europe-west1.firebasedatabase.app/Games.json', newGameItem)
 
             this.setState({
                 games: [],
@@ -138,15 +152,16 @@ class AddGame extends React.Component {
 
                         {this.renderControls()}
 
-                        <Button
-                            type="success"
-                            onClick={this.addGameHandler}
-                            disabled={!this.state.isFormValid}>1) Сохранить значения
-                        </Button>
+                        {/*<Button*/}
+                        {/*    type="success"*/}
+                        {/*    onClick={this.addGameHandler}*/}
+                        {/*    disabled={!this.state.isFormValid}>1) Сохранить значения*/}
+                        {/*</Button>*/}
                         <Button
                             type="success"
                             onClick={this.createGameHandler}
-                            disabled={this.state.games.length === 0}>2) Добавить игру
+                            >
+                            2) Добавить игру
                         </Button>
                         <Button
                             type="primary"

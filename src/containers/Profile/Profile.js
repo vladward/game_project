@@ -3,7 +3,7 @@ import s from './Profile.module.css'
 import userPhoto from "./../../images/user_profile.png"
 import cod from "./../../images/gameIcons/cod.png"
 import csgo from "./../../images/gameIcons/csgo.png"
-import dota from "./../../images/gameIcons/dota.png"
+import dota from "../../images/gameIcons/Dota2.png"
 import fortnite from "./../../images/gameIcons/fortnite.png"
 import minecraft from "./../../images/gameIcons/minecraft.png"
 
