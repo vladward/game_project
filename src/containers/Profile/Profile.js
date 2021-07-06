@@ -1,10 +1,15 @@
 import React from "react"
 import s from './Profile.module.css'
 import userPhoto from "./../../images/user_profile.png"
-import cod from "./../../images/gameIcons/cod.png"
-import csgo from "./../../images/gameIcons/csgo.png"
-import dota from "../../images/gameIcons/Dota2.png"
-import fortnite from "./../../images/gameIcons/fortnite.png"
+import COD from "./../../images/gameIcons/cod.png"
+import Minecraft from "./../../images/gameIcons/minecraft.png"
+import CS_GO from "./../../images/gameIcons/csgo.png"
+import Dota2 from "../../images/gameIcons/Dota2.png"
+import Fortnite from "./../../images/gameIcons/fortnite.png"
+import Assasins_Creed from "./../../images/gameIcons/assasins.png"
+import TES5_Skyrim from "../../images/gameIcons/Skyrim.png"
+import Horizon_Zero_Dawn from "./../../images/gameIcons/horizen.png"
+import Mario from "./../../images/gameIcons/Mario.png"
 import minecraft from "./../../images/gameIcons/minecraft.png"
 
 const Profile = () => {
@@ -40,20 +45,20 @@ const Profile = () => {
                     </div>
                     <div className={s.games_Container}>
                         <div className={s.game_item}>
-                            <img src={TES5 Skyrim}/>
+                            <img src={TES5_Skyrim}/>
                             <div className={s.game_name}>TES5 Skyrim</div>
                         </div>
                         <div className={s.game_item}>
-                            <img src={csgo}/>
-                            <div className={s.game_name}>CS:GO</div>
+                            <img src={Assasins_Creed}/>
+                            <div className={s.game_name}>Assasins Creed</div>
                         </div>
                         <div className={s.game_item}>
-                            <img src={dota}/>
-                            <div className={s.game_name}>DOTA2</div>
+                            <img src={Horizon_Zero_Dawn}/>
+                            <div className={s.game_name}>Horizon Zero Dawn</div>
                         </div>
                         <div className={s.game_item}>
-                            <img src={fortnite}/>
-                            <div className={s.game_name}>Fortnite</div>
+                            <img src={Dota2}/>
+                            <div className={s.game_name}>Dota 2</div>
                         </div>
                     </div>
                 </div>
