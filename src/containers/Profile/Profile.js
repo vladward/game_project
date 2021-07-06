@@ -40,8 +40,8 @@ const Profile = () => {
                     </div>
                     <div className={s.games_Container}>
                         <div className={s.game_item}>
-                            <img src={cod}/>
-                            <div className={s.game_name}>Call of Duty</div>
+                            <img src={TES5 Skyrim}/>
+                            <div className={s.game_name}>TES5 Skyrim</div>
                         </div>
                         <div className={s.game_item}>
                             <img src={csgo}/>

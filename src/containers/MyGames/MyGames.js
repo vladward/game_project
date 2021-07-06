@@ -1,17 +1,17 @@
 import React from "react"
 import s from './MyGames.module.css'
-import cod from "./../../images/gameIcons/cod.png"
-import minecraft from "./../../images/gameIcons/minecraft.png"
-import csgo from "./../../images/gameIcons/csgo.png"
+import COD from "./../../images/gameIcons/cod.png"
+import Minecraft from "./../../images/gameIcons/minecraft.png"
+import CS_GO from "./../../images/gameIcons/csgo.png"
 import Dota2 from "../../images/gameIcons/Dota2.png"
-import fortnite from "./../../images/gameIcons/fortnite.png"
-import assasins from "./../../images/gameIcons/assasins.png"
-import skyrim from "../../images/gameIcons/Skyrim.png"
-import horizon from "./../../images/gameIcons/horizen.png"
+import Fortnite from "./../../images/gameIcons/fortnite.png"
+import Assasins_Creed from "./../../images/gameIcons/assasins.png"
+import TES5_Skyrim from "../../images/gameIcons/Skyrim.png"
+import Horizon_Zero_Dawn from "./../../images/gameIcons/horizen.png"
+import Mario from "./../../images/gameIcons/Mario.png"
 import Button from "../../components/UI/Button/Button";
 import axios from "axios"
 import imageGame from "./AddGames/imageGame/imageGame";
-
 
 
 class MyGames extends React.Component {
@@ -22,24 +22,70 @@ class MyGames extends React.Component {
 
 
     renderGameItem() {
+
         return this.state.games.map((gam) => {
+            const imName = gam.data.nameGame
             return (
                 <div className={s.MyGames_item} key={gam.id}>
-                    {imageGame(gam.data.nameGame + '.png')}
-                    <div>{gam.data.nameGame}</div>
-                    <div>{gam.data.description.gDate}</div>
-                    <div>{gam.data.description.gDeveloper}</div>
-                    <div>{gam.data.description.gGenre}</div>
-                    <div>{gam.data.description.gPlatform}</div>
-                    <div>{gam.data.description.gPublisher}</div>
-                    <div>{gam.data.description.gStar}</div>
+                    {
+                        (imName === 'Dota2')
+                            ? <img src={Dota2}/>
+                            : null
+                    }
+                    {
+                        (imName === 'TES5_Skyrim')
+                            ? <img src={TES5_Skyrim}/>
+                            : null
+                    }
+                    {
+                        (imName === 'Mario')
+                            ? <img src={Mario}/>
+                            : null
+                    }
+                    {
+                        (imName === 'CS_GO')
+                            ? <img src={CS_GO}/>
+                            : null
+                    }
+                    {
+                        (imName === 'Minecraft')
+                            ? <img src={Minecraft}/>
+                            : null
+                    }
+                    {
+                        (imName === 'COD')
+                            ? <img src={COD}/>
+                            : null
+                    }
+                    {
+                        (imName === 'Fortnite')
+                            ? <img src={Fortnite}/>
+                            : null
+                    }
+                    {
+                        (imName === 'Assasins Creed')
+                            ? <img src={Assasins_Creed}/>
+                            : null
+                    }
+                    {
+                        (imName === 'Horizon_Zero_Dawn')
+                            ? <img src={Horizon_Zero_Dawn}/>
+                            : null
+                    }
+                    <div>Name: <i><strong>{gam.data.nameGame}</strong></i></div>
+                    <div>Create: <i><strong>{gam.data.description.gDate}</strong></i></div>
+                    <div>Maker: <i><strong>{gam.data.description.gDeveloper}</strong></i></div>
+                    <div>Genre: <i><strong>{gam.data.description.gGenre}</strong></i></div>
+                    <div>Platform: <i><strong>{gam.data.description.gPlatform}</strong></i></div>
+                    <div>Published: <i><strong>{gam.data.description.gPublisher}</strong></i></div>
+                    <div>Raiting: <i><strong>{gam.data.description.gStar}</strong></i></div>
                 </div>
             )
         })
     }
 
 
-    handleClick = (e) => {
+    handleClick = () => {
         this.props.history.push("/AddGame")
     }
 
