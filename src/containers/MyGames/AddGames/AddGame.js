@@ -1,10 +1,12 @@
 import React from "react"
 import s from "./AddGame.module.css"
-import Button from "../../../components/UI/Button/Button";
-import {createControl, validate, validateForm} from "../../../form/formFramework";
-import Input from "../../../components/UI/Input/Input";
-import emptyTag from "../../../hoc/emptyTag/emptyTag";
-import axios from "axios";
+import Button from "../../../components/UI/Button/Button"
+import {createControl, validate, validateForm} from "../../../form/formFramework"
+import Input from "../../../components/UI/Input/Input"
+import emptyTag from "../../../hoc/emptyTag/emptyTag"
+import {fetchAddGame, fetchFinishAddGame} from "../../../store/actions/addGameAction"
+import {connect} from "react-redux"
+
 
 function createOptionControl(item, text) {
     return createControl({
@@ -33,7 +35,6 @@ function createFormControls() {
 class AddGame extends React.Component {
 
     state = {
-        games: [],
         newGameItem: {},
         isFormValid: false,
         formControls: createFormControls()
@@ -86,21 +87,16 @@ class AddGame extends React.Component {
                 gDate: this.state.formControls.game6.value
             }
         }
-
-        try{
-            await axios.post('https://gamer-arena-a2edb-default-rtdb.europe-west1.firebasedatabase.app/Games.json', newGameItem)
+        this.props.fetchAddGame(newGameItem)
 
             this.setState({
-                games: [],
                 isFormValid: false,
                 formControls: createFormControls()
             })
-        } catch (error) {
-            console.log(error)
-        }
+        this.props.fetchFinishAddGame()
     }
 
-    cancelGameHandler = (e) => {
+    cancelGameHandler = () => {
         this.props.history.push("/MyGames")
     }
 
@@ -149,19 +145,11 @@ class AddGame extends React.Component {
                 <div>
                     <h1>Добавить игру</h1>
                     <form onSubmit={this.submitHandler} className={s.AddGames_form}>
-
                         {this.renderControls()}
-
-                        {/*<Button*/}
-                        {/*    type="success"*/}
-                        {/*    onClick={this.addGameHandler}*/}
-                        {/*    disabled={!this.state.isFormValid}>1) Сохранить значения*/}
-                        {/*</Button>*/}
                         <Button
                             type="success"
                             onClick={this.createGameHandler}
-                            >
-                            2) Добавить игру
+                            >Добавить игру
                         </Button>
                         <Button
                             type="primary"
@@ -174,4 +162,17 @@ class AddGame extends React.Component {
     }
 }
 
-export default AddGame
+function mapStateToProps (state) {
+    return {
+        games: state.myGames.games
+    }
+}
+
+function mapDispatchToProps (dispatch) {
+    return {
+        fetchAddGame: item => dispatch(fetchAddGame(item)),
+        fetchFinishAddGame: () => dispatch(fetchFinishAddGame())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddGame)

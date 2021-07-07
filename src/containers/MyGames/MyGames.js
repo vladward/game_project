@@ -10,8 +10,8 @@ import TES5_Skyrim from "../../images/gameIcons/Skyrim.png"
 import Horizon_Zero_Dawn from "./../../images/gameIcons/horizen.png"
 import Mario from "./../../images/gameIcons/Mario.png"
 import Button from "../../components/UI/Button/Button"
-import {connect} from "react-redux";
-import {fetchMyGames} from "../../store/actions/myGamesAction";
+import {connect} from "react-redux"
+import {fetchMyGames} from "../../store/actions/myGamesAction"
 
 
 class MyGames extends React.Component {

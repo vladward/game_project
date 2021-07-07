@@ -13,16 +13,12 @@ export function fetchMyGames() {
                     data: item
                 })
                 return games
-
-                // games.data = item
-                // return games
-                //
-                // if (responseArr.length > 0) {
-                //     const games = responseArr
-                //     console.log(games)
-                // }
             })
-
+            // if(responseArr.length > 0) {
+            //     const games = responseArr
+            //     console.log(games)
+            // }
+            console.log(games)
             dispatch(fetchMyGamesSuccess(games))
         } catch (e) {
             dispatch(fetchMyGamesError(e))
